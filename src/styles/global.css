@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bgcolor1: rgba(34, 33, 33, 0.52);
+  --bgcolor1-solid: rgb(34, 33, 33);
+  --bgcolor2: rgba(65, 62, 62, 0.52);
+  --bgcolor2-solid: rgba(65, 62, 62);
+  --bgcolor: linear-gradient(90deg, var(--bgcolor1), var(--bgcolor2));
+  --navcolor: rgb(65, 62, 62);
+  --calltoactionbtn-bgcolor: rgb(243, 161, 8);
+  --calltoactionbtn-color: var(--bgcolor1-solid);
+
+  /* BREAKPOINTS */
+  --screen-xs: 400px;
+  --screen-md: 700px;
+  --screen-lg: 1000px;
+  --screen-xl: 1200px;
+}
+
+html {
+  width: 100vw;
+  max-width: 100%;
+  color: white;
+  font-family: "Audiowide";
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+}
+
+h1 {
+  font-size: clamp(2rem, 9vw, 5rem);
+}
+
+h2 {
+  font-size: clamp(0.7rem, 7vw, 4rem);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: clamp(0.3rem, 3vw, 1rem);
+}
