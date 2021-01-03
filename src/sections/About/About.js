@@ -107,7 +107,7 @@ const PortraitBackground = styled.div`
 const About = () => {
 
   const { ref, inView } = useInView({
-    threshold: 0,
+    threshold: 0.75,
     triggerOnce: true
   });
 

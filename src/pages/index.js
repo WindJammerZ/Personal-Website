@@ -1,10 +1,10 @@
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
 import 'intersection-observer';
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 
-import { isIE, isChrome } from 'react-device-detect';
+import { isIE } from 'react-device-detect';
 
 import Main from "../sections/Main/Main"
 import About from "../sections/About/About"
@@ -45,9 +45,14 @@ const ContentLayout = styled.main`
 `
 
 const Home = () => {
+  const [pageLoaded, setPageLoaded] = useState(false)
   const [pageTouch, setPageTouch] = useState(false)
   const [modalShow, setModalShow] = useState(false)
   const [projectPageDetails, setProjectPageDetails] = useState(null)
+
+  useEffect(() => {
+    setPageLoaded(true)
+  }, [])
 
   const menuClosedHandler = menuClosed => {
     setPageTouch(() => !menuClosed)
@@ -56,6 +61,10 @@ const Home = () => {
   const modalShowHandler = (show, details) => {
     setProjectPageDetails(details)
     setModalShow(show)
+  }
+
+  if (!pageLoaded) {
+    return null
   }
 
   if (isIE) {

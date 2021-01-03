@@ -28,11 +28,8 @@ const TerrainGrid = styled.div`
   width: 600%;
   height: 80%;
   background-color: black;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-rows:repeat(15, 1fr);
   grid-template-rows: repeat(15, 1fr);
-  -ms-grid-columns:repeat(20, 1fr);
   grid-template-columns: repeat(20, 1fr);
   transform-origin: bottom center;
   transform: rotate3d(1, 0, 0.5, 65deg);

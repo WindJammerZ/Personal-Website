@@ -39,6 +39,10 @@ const TechFront = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /* this fixes Firefox backface-visibility issue */
+  transform: rotateX(0deg);
+  
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 
