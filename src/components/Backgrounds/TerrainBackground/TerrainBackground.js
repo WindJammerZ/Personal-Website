@@ -8,7 +8,7 @@ const Layout = styled.div`
   width: 100vw;
   height: 100vh;
   background: black;
-  perspective: 180px;
+  perspective: 200px;
   overflow: hidden;
 `
 
@@ -24,7 +24,7 @@ const terrainAnimation = keyframes`
 const TerrainGrid = styled.div`
   position: absolute;
   top: 20%;
-  left: -250%;
+  left: -386.75%;
   width: 600%;
   height: 80%;
   background-color: black;

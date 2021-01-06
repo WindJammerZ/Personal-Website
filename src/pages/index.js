@@ -9,7 +9,7 @@ import { isIE } from 'react-device-detect';
 import Main from "../sections/Main/Main"
 import About from "../sections/About/About"
 import Resume from "../sections/Resume/Resume"
-import Portfolio from "../sections/Portfolio/Portfolio"
+import Projects from "../sections/Projects/Projects"
 import Contact from "../sections/Contact/Contact"
 import NavbarButton from "../components/Navbar/NavbarButton"
 import TerrainBackground from "../components/Backgrounds/TerrainBackground/TerrainBackground"
@@ -82,7 +82,7 @@ const Home = () => {
         <Main />
         <About />
         <Resume />
-        <Portfolio modalShow={modalShowHandler} />
+        <Projects modalShow={modalShowHandler} />
         <Contact />
       </ContentLayout>
 

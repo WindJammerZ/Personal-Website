@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 
 const Layout = styled.div`
@@ -15,11 +15,20 @@ const Layout = styled.div`
   align-items: center;
   justify-content: flex-start;
   background: rgba(0, 0, 0, 0.75);
-  border: 0.5rem solid purple;
-  color: white;
+  border: 0.5rem solid rgba(255, 0, 255, 0.5);
+  color: rgba(255, 255, 255, 1);
   border-radius: 0.5rem;
   box-shadow: inset 0rem 0rem 1rem rgba(255, 0, 255, 0.8),
     0rem 0rem 1rem 0.5rem rgba(255, 0, 255, 0.8);
+  transition: all 200ms ease;
+
+  &:hover{
+    border: 0.5rem solid rgba(255, 0, 255, 0.8);
+    transform: scale(1.2);
+    box-shadow: inset 0rem 0rem 1rem rgba(255, 0, 255, 0.8),
+    0rem 0rem 2rem 0.5rem rgba(255, 0, 255, 1);
+    /* text-shadow: 0rem 0rem 2rem rgba(255, 50, 255, 1); */
+  }
 `
 
 const ProjectImg = styled.img`
@@ -31,14 +40,18 @@ const ProjectImg = styled.img`
 `
 
 const DescriptionSection = styled.div`
-    position: absolute;
-    bottom: 0%;
-    left: 0%;
+  position: absolute;
+  bottom: ${props => props.hovering ? `50%` : `0%`};
+  transform: ${props => props.hovering ? `translateY(50%)` : `translateY(0%)`};
+  left: 0%;
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* filter: ${props => props.hovering ? `brightness(1.5)` : `brightness(1)`}; */
+  text-shadow: 0rem 0rem ${props => props.hovering ? `2.5rem` : `0rem`} rgba(255, 0, 255, 1);
+  transition: all 200ms ease;
 `
 
 const Title = styled.h3`
@@ -46,14 +59,23 @@ const Title = styled.h3`
 `
 
 const ProjectCard = ({ modalShow, title, thumbnail, link, description }) => {
+
+  const [hover, setHover] = useState(false);
+
+  const mouseHoverHandler = (hovered) => {
+    setHover(hovered)
+  }
+
   return (
     <Layout
       onClick={() => modalShow(true, { title, thumbnail, link, description })}
+      onMouseEnter={() => mouseHoverHandler(true)}
+      onMouseLeave={() => mouseHoverHandler(false)}
     >
       <ProjectImg src={thumbnail} />
-      <DescriptionSection>
+      <DescriptionSection hovering={hover}>
         <Title>{title}</Title>
-      </DescriptionSection>
+      </DescriptionSection >
     </Layout>
   )
 }

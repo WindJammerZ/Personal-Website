@@ -4,9 +4,9 @@ import styled from "styled-components"
 import { Layout, Info, Title } from "../../styles/styles"
 import ProjectCard from "./ProjectCard/ProjectCard"
 
-import { BREAK_POINTS, PROJECT_PAGE_PROOF_OF_CONCEPT_INFORMATION } from "../../consts/consts"
+import { BREAK_POINTS, PROJECT_PAGE_PROFESSIONAL_PROJECTS_INFORMATION, PROJECT_PAGE_PROOF_OF_CONCEPT_INFORMATION } from "../../consts/consts"
 
-const PortfolioLayout = styled(Layout)`
+const ProjectsLayout = styled(Layout)`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -40,15 +40,24 @@ const ProjectSection = styled.div`
   }
 `
 
-const Portfolio = ({ modalShow }) => {
+const Projects = ({ modalShow }) => {
   return (
-    <PortfolioLayout id={"portfolio"}>
-      <Title>Portfolio</Title>
+    <ProjectsLayout id={"projects"}>
+      <Title>Projects</Title>
       <ContentLayout>
 
-        <Info>Below is some of my work:</Info>
+        <Info>Below is some of my professional work:</Info>
         <ProjectSection>
-          Updating soon...
+          {PROJECT_PAGE_PROFESSIONAL_PROJECTS_INFORMATION.map(project =>
+            <ProjectCard
+              key={project.name}
+              modalShow={modalShow}
+              title={project.title}
+              thumbnail={project.thumbnail}
+              link={project.link}
+              description={project.description}
+            />
+          )}
         </ProjectSection>
 
         <Info>Below are some of my proof of concept projects:</Info>
@@ -65,8 +74,8 @@ const Portfolio = ({ modalShow }) => {
           )}
         </ProjectSection>
       </ContentLayout>
-    </PortfolioLayout>
+    </ProjectsLayout>
   )
 }
 
-export default Portfolio
+export default Projects

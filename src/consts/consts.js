@@ -1,6 +1,7 @@
 import { faJsSquare, faHtml5, faCss3Alt, faReact, faNodeJs } from '@fortawesome/free-brands-svg-icons'
 import battlefield_casualties_img from '../imgs/projects/battle_casualties_thumb.jpg'
 import bug_squasher_img from '../imgs/projects/bug_squasher.jpg'
+import rango_img from '../imgs/projects/rango.jpg'
 
 export const BREAK_POINTS = {
     portrait: '(orientation: portrait)',
@@ -15,7 +16,7 @@ export const sectionsArray = [
     { name: "home", id: "main" },
     { name: "about me", id: "about" },
     { name: "résumé", id: "resume" },
-    { name: "projects", id: "portfolio" },
+    { name: "projects", id: "projects" },
     { name: "contact", id: "contact" },
 ]
 
@@ -71,6 +72,16 @@ export const TECH_HIERARCHY = [
                 link: '#'
             }
         ]
+    }
+]
+
+export const PROJECT_PAGE_PROFESSIONAL_PROJECTS_INFORMATION = [
+    {
+        name: 'rango',
+        title: 'Operation Rango',
+        description: "Rango is a complete rebuild of the current Nuclear Regulatory Commission's (NRC) nuclear power plant performance indicator webpage.  Rango displays current and historical quarterly data of all operating nuclear power plants.  Rango will go live sometime in 2021.  This application was built using React.js.",
+        thumbnail: rango_img,
+        link: null
     }
 ]
 

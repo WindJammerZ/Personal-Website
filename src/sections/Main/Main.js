@@ -49,7 +49,7 @@ const Main = () => {
         </h1>
       </HeadLayout>
       <CallToActionButton
-        clicked={() => callToActionHandler(`portfolio`)}
+        clicked={() => callToActionHandler(`projects`)}
       >
         View My Work
       </CallToActionButton>
