@@ -30,7 +30,6 @@ const ErrorDisplay = styled.div`
   justify-content: center;
   background: black;
   color: white;
-
 `
 
 const ContentLayout = styled.main`
@@ -78,7 +77,7 @@ const Home = () => {
   return (
     <Layout>
       <TerrainBackground />
-      <ContentLayout onClick={() => setPageTouch(() => true)} modalShow={modalShow}>
+      <ContentLayout onClick={() => setPageTouch(() => true)}>
         <Main />
         <About />
         <Resume />

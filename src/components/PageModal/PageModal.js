@@ -4,15 +4,13 @@ import styled from "styled-components"
 import ProjectSynopsisPage from "./ProjectSynopsisPage"
 
 const Layout = styled.div`
-  width: 100vw;
-  height: 100vh;
-  overscroll-behavior: contain;
+  width: 100%;
+  height: 100%;
   position: fixed;
   top: 0%;
-  right: ${props => (props.active ? `0%` : `-150%`)};
+  left: ${props => (props.active ? `0%` : `150%`)};
   background: rgba(0, 0, 0, 0.8);
   color: white;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,8 +21,8 @@ const Layout = styled.div`
 const CloseButton = styled.button`
   position: absolute;
   cursor: pointer;
-  top: 0%;
-  right: 0%;
+  top: 2.5%;
+  right: 2.5%;
   width: 2rem;
   height: 2rem;
   font-weight: 900;
@@ -59,8 +57,11 @@ const PageModal = ({ show, clicked, pageDetails }) => {
       <ProjectSynopsisPage
         title={pageDetails.title}
         description={pageDetails.description}
+        status={pageDetails.status}
         link={pageDetails.link}
+        github={pageDetails.github}
         thumbnail={pageDetails.thumbnail}
+        closeClicked={clicked}
       />
     )
   }
@@ -70,9 +71,6 @@ const PageModal = ({ show, clicked, pageDetails }) => {
       active={active}
     >
       {display}
-      <CloseButton onClick={() => clicked(false)}>
-        <span>X</span>
-      </CloseButton>
     </Layout>
   )
 }

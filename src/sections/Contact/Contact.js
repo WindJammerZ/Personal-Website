@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
 
 import { Layout } from "../../styles/styles"
@@ -20,8 +21,10 @@ const ContactLayout = styled(Layout)`
 const ContactList = styled.div`
   width: 100%;
   height: 5rem;
-  display: grid;
-  place-content: center;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 2.5rem;
 `
 
@@ -29,6 +32,7 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   background: var(--calltoactionbtn-bgcolor);
   color: var(--calltoactionbtn-color);
   border-radius: 50%;
+  margin: 0rem 0.5rem;
   box-shadow: none;
   transition: background 300ms linear, color 300ms linear,
     box-shadow 300ms linear;
@@ -51,6 +55,13 @@ const Contact = () => {
         <a href="mailto:jkent355@gmail.com">
           <StyledFontAwesomeIcon
             icon={faEnvelope}
+            color="black"
+            transform="shrink-6"
+          />
+        </a>
+        <a href="https://github.com/WindJammerZ" target="_blank" rel="noreferrer">
+          <StyledFontAwesomeIcon
+            icon={faGithub}
             color="black"
             transform="shrink-6"
           />

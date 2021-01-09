@@ -53,8 +53,10 @@ const Projects = ({ modalShow }) => {
               key={project.name}
               modalShow={modalShow}
               title={project.title}
+              status={project.status}
               thumbnail={project.thumbnail}
               link={project.link}
+              github={project.github}
               description={project.description}
             />
           )}
@@ -67,8 +69,10 @@ const Projects = ({ modalShow }) => {
               key={project.name}
               modalShow={modalShow}
               title={project.title}
+              status={project.status}
               thumbnail={project.thumbnail}
               link={project.link}
+              github={project.github}
               description={project.description}
             />
           )}

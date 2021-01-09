@@ -27,7 +27,6 @@ const Layout = styled.div`
     transform: scale(1.2);
     box-shadow: inset 0rem 0rem 1rem rgba(255, 0, 255, 0.8),
     0rem 0rem 2rem 0.5rem rgba(255, 0, 255, 1);
-    /* text-shadow: 0rem 0rem 2rem rgba(255, 50, 255, 1); */
   }
 `
 
@@ -49,16 +48,16 @@ const DescriptionSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* filter: ${props => props.hovering ? `brightness(1.5)` : `brightness(1)`}; */
   text-shadow: 0rem 0rem ${props => props.hovering ? `2.5rem` : `0rem`} rgba(255, 0, 255, 1);
   transition: all 200ms ease;
+  overflow-y: auto;
 `
 
 const Title = styled.h3`
   text-align: center;
 `
 
-const ProjectCard = ({ modalShow, title, thumbnail, link, description }) => {
+const ProjectCard = ({ modalShow, title, status, thumbnail, link, github, description }) => {
 
   const [hover, setHover] = useState(false);
 
@@ -68,7 +67,7 @@ const ProjectCard = ({ modalShow, title, thumbnail, link, description }) => {
 
   return (
     <Layout
-      onClick={() => modalShow(true, { title, thumbnail, link, description })}
+      onClick={() => modalShow(true, { title, thumbnail, status, link, github, description })}
       onMouseEnter={() => mouseHoverHandler(true)}
       onMouseLeave={() => mouseHoverHandler(false)}
     >
