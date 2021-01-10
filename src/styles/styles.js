@@ -20,6 +20,7 @@ export const Title = styled.h1`
   box-shadow: inset 0rem 0rem 0.3em pink;
   border-radius: 0.5rem;
   padding: 1rem 1rem;
+  margin-bottom: 1rem;
   color: white;
   text-shadow: 0 0 0.6rem ${TITLE_COLOR_BLUR}, 0 0 1.5rem ${TITLE_COLOR_BLUR}, -0.2rem 0.1rem 1rem ${TITLE_COLOR_OUTLINE},
     0.2rem 0.1rem 1rem ${TITLE_COLOR_OUTLINE}, 0 -0.5rem 2rem ${TITLE_COLOR_OUTLINE}, 0 0.5rem 3rem ${TITLE_COLOR_OUTLINE};

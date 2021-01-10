@@ -34,31 +34,42 @@ const portrait_anim = keyframes`
   }
 `
 
+const backgroundVisibleAnimaton = keyframes`
+  0%{
+    opacity: 0;
+  }
+  75%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+  }
+`
+
 const AboutLayout = styled(Layout)`
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 `
 
 const ContentLayout = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 100%;
   align-items: center;
-  margin: 0.5rem 0rem;
+  justify-content: center;
+  width: 100%;
   padding: 0.5rem 0.5rem;
   margin-top: auto;
-  justify-content: center;
   flex: 1;
 
   & > * {
-    height: 50%;
+    width: 100%;
     margin-bottom: 2rem;
   }
 
   @media ${BREAK_POINTS.xl} {
     flex-direction: row;
+    justify-content: space-between;
 
     & > * {
       width: 50%;
@@ -67,9 +78,8 @@ const ContentLayout = styled.div`
 `
 
 const PortraitMantle = styled.div`
-  height: 22.5rem;
-  min-width: 22.5rem;
-  max-width: 100%;
+  height: 20.5rem;
+  width: 20.5rem;
   position: relative;
   display: flex;
   align-items: center;
@@ -80,7 +90,7 @@ const Portrait = styled.img`
   position: absolute;
   top: 40%;
   left: 50%;
-  height: 10rem;
+  width: 10rem;
   object-fit: cover;
   border-radius: 50%;
   border: 0.5rem solid cyan;
@@ -95,13 +105,28 @@ const Portrait = styled.img`
 `
 
 const PortraitBackground = styled.div`
+  --clip-path-background: polygon(0% 0%, 100% 20%, 40% 100%);
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -60%);
-  width: 22.5rem;
-  height: 22.5rem;
-  background: transparent;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  opacity: 0;
+  overflow: hidden;
+  clip-path: var(--clip-path-background);
+  animation: ${backgroundVisibleAnimaton} 1s linear forwards;
+`
+
+const PortraitSubBackground = styled(PortraitBackground)`
+  width: 95%;
+  height: 95%;
+  clip-path: var(--clip-path-background);
+`
+
+const StyledNeonSkyBackground = styled(NeonSkyBackground)`
+
 `
 
 const About = () => {
@@ -117,16 +142,16 @@ const About = () => {
   if (inView) {
     background = (
       <PortraitBackground inView={inView}>
-        <NeonSkyBackground />
+        <PortraitSubBackground>
+          <StyledNeonSkyBackground />
+        </PortraitSubBackground>
       </PortraitBackground>
     )
     portrait = <Portrait src={about_me_portrait} inView={inView} />
-
   }
 
   return (
     <AboutLayout id={"about"}>
-
       <Title>About Me</Title>
       <ContentLayout>
         <PortraitMantle ref={ref}>

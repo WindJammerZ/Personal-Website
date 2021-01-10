@@ -2,7 +2,6 @@ import React from "react"
 import styled, { keyframes } from "styled-components"
 
 const Layout = styled.div`
-  position: relative;
   width: 100%;
   height: 100%;
 `
@@ -16,36 +15,11 @@ const backgroundMoveAnimation = keyframes`
   }
 `
 
-const backgroundVisibleAnimaton = keyframes`
-  0%{
-    opacity: 0;
-  }
-  75%{
-    opacity: 0.5;
-  }
-  100%{
-    opacity: 1;
-  }
-`
-
 const StyledBackgroundLayout = styled.div`
-  --transform-x: -48%;
-  --transform-y: -40%;
-  position: absolute;
-  width: 85.5%;
-  height: 85.5%;
-  top: 50%;
-  opacity: 0;
-  transform: translate(var(--transform-x), var(--transform-y));
-  clip-path: polygon(0% 0%, 100% 20%, 40% 100%);
-  overflow: hidden;
-  animation: ${backgroundMoveAnimation} 1s ease forwards,
-    ${backgroundVisibleAnimaton} 1s linear forwards;
-`
-
-const BackgroundBorderLayout = styled(StyledBackgroundLayout)`
-  transform: translate(var(--transform-x), var(--transform-y)) scale(1.05);
-  background: white;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  animation: ${backgroundMoveAnimation} 1s ease forwards;
 `
 
 const BackgroundLayout = styled(StyledBackgroundLayout)`
@@ -266,7 +240,6 @@ const PinkLaser = styled(Laser)`
 export const NeonSkyBackground = () => {
   return (
     <Layout>
-      <BackgroundBorderLayout />
       <BackgroundLayout>
         <BackLayer>
           <BlueLaser />
