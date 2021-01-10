@@ -69,7 +69,7 @@ const ContentLayout = styled.div`
 
   @media ${BREAK_POINTS.xl} {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 
     & > * {
       width: 50%;
