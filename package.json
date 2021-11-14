@@ -1,55 +1,37 @@
 {
-  "name": "gatsby-starter-hello-world",
-  "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
-  "version": "0.1.0",
-  "license": "0BSD",
+  "name": "website",
+  "version": "0.0.0",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
     "@fortawesome/fontawesome-free": "^5.14.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-regular-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
-    "babel-plugin-styled-components": "^1.11.1",
-    "core-js": "^3.6.5",
-    "gatsby": "^2.24.91",
-    "gatsby-plugin-google-fonts-v2": "0.0.6",
-    "gatsby-plugin-polyfill-io": "^1.1.0",
-    "gatsby-plugin-styled-components": "^3.3.11",
-    "gatsby-source-filesystem": "^2.0.42-reporter-npm.8",
-    "intersection-observer": "^0.12.0",
-    "react": "^16.12.0",
-    "react-app-polyfill": "^1.0.6",
-    "react-device-detect": "^1.15.0",
-    "react-dom": "^16.12.0",
+    "@mui/icons-material": "^5.0.5",
+    "@mui/lab": "^5.0.0-alpha.53",
+    "@mui/material": "^5.0.6",
+    "@mui/styled-engine-sc": "^5.0.4",
+    "@react-three/drei": "^7.16.0",
+    "@react-three/fiber": "^7.0.16",
+    "@react-three/postprocessing": "^2.0.5",
+    "emailjs-com": "^3.2.0",
+    "gsap": "^3.8.0",
+    "postprocessing": "^6.23.1",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
     "react-intersection-observer": "^8.29.1",
-    "styled-components": "^5.2.0",
-    "typography": "^0.16.19"
+    "styled-components": "^5.2.0"
   },
   "devDependencies": {
-    "gatsby-cli": "^2.12.87",
-    "prettier": "2.0.5"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "@vitejs/plugin-react": "^1.0.0",
+    "vite": "^2.6.4"
   }
 }

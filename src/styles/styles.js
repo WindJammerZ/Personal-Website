@@ -8,12 +8,14 @@ export const Layout = styled.section.attrs(props => ({
     min-height: 100vh;
     padding: 0.5rem 2.5rem;
     display: flex;
+    flex-direction: column;
     overflow: hidden;
   `
-const TITLE_COLOR_BLUR = `#FF6EC7`
-const TITLE_COLOR_OUTLINE = `#FC9FD8`
+export const TITLE_COLOR_BLUR = `#FF6EC7`
+export const TITLE_COLOR_OUTLINE = `#FC9FD8`
+export const TITLE_COLOR = `#FFE6FF`
 
-export const Title = styled.h1`
+export const Title = styled.h2`
   width: 100%;
   text-align: center;
   border-bottom: 0.5rem solid white;
@@ -27,25 +29,26 @@ export const Title = styled.h1`
 `
 
 const nameGlowAnim = keyframes`
+
 0% {
-    text-shadow:  0 0 10px white;
+    text-shadow:  0 0 1.0rem rgba(255, 255, 255, 1.0);
   }
   
   15% {
-    text-shadow: 2px 2px 10px rgba(255, 255, 255, 1),
-                 -2px -2px 10px rgba(255, 255, 255, 1);
+    text-shadow: 0.2rem 0.2rem 1.0rem rgba(255, 255, 255, 1),
+                 -0.2rem -0.2rem 1.0rem rgba(255, 255, 255, 1);
   }
   30% {
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, .7),
-                 -2px -2px 4px rgba(255, 255, 255, .7);
+    text-shadow: 0.2rem 0.2rem 0.4rem rgba(255, 255, 255, .7),
+                 -0.2rem -0.2rem 0.4rem rgba(255, 255, 255, .7);
   }
   50% {
-    text-shadow: 20px 20px 50px rgba(255, 255, 255, .5),
-                 -20px -20px 50px rgba(255, 255, 255, .5);
+    text-shadow: 2.0rem 2.0rem 5.0rem rgba(255, 255, 255, .5),
+                 -2.0rem -2.0rem 5.0rem rgba(255, 255, 255, .5);
   }
   100%{
-        text-shadow: 0 0 0.6rem ${TITLE_COLOR_BLUR}, 0 0 1.5rem ${TITLE_COLOR_BLUR}, -0.2rem 0.1rem 1rem ${TITLE_COLOR_OUTLINE},
-    0.2rem 0.1rem 1rem ${TITLE_COLOR_OUTLINE}, 0 -0.5rem 2rem ${TITLE_COLOR_OUTLINE}, 0 0.5rem 3rem ${TITLE_COLOR_OUTLINE};
+    text-shadow: 0 0 0.6rem ${TITLE_COLOR_BLUR}, 0 0 1.5rem ${TITLE_COLOR_BLUR}, -0.2rem 0.1rem 1rem ${TITLE_COLOR_OUTLINE},
+                  0.2rem 0.1rem 1rem ${TITLE_COLOR_OUTLINE}, 0 -0.5rem 2rem ${TITLE_COLOR_OUTLINE}, 0 0.5rem 3rem ${TITLE_COLOR_OUTLINE};
 }
 `
 
@@ -56,15 +59,16 @@ export const StyledName = styled.span`
   animation-delay: 1s;
   animation-duration: 2s;
   animation-fill-mode: forwards;
-  color: #ffe6ff;
+  color: ${TITLE_COLOR};
 
   &:hover {
     color: purple;
   }
 `
 
-export const Info = styled.p`
+export const Info = styled.div`
   text-align: center;
+  font-family: "Arimo";
   padding: 1rem 1rem;
   max-width: 60ch;
   border: 0.5rem solid white;

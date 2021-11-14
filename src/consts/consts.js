@@ -1,7 +1,11 @@
 import { faJsSquare, faHtml5, faCss3Alt, faReact, faNodeJs } from '@fortawesome/free-brands-svg-icons'
-import battlefield_casualties_img from '../imgs/projects/battle_casualties_thumb.jpg'
-import bug_squasher_img from '../imgs/projects/bug_squasher.jpg'
 import rango_img from '../imgs/projects/rango.jpg'
+
+export const COLOR = {
+    r: 0.2627,
+    g: 0.9765,
+    b: 1.0
+}
 
 export const BREAK_POINTS = {
     portrait: '(orientation: portrait)',
@@ -78,31 +82,11 @@ export const TECH_HIERARCHY = [
 export const PROJECT_PAGE_PROFESSIONAL_PROJECTS_INFORMATION = [
     {
         name: 'rango',
-        title: 'Operation Rango',
-        description: "Rango is a complete rebuild of the current Nuclear Regulatory Commission's (NRC) nuclear power plant performance indicator webpage.  Rango displays current and historical quarterly data of all operating nuclear power plants.  Rango will go live in 2021.  This application was built using React.js.",
-        status: 'development',
+        title: 'Operating Reactor Analytics',
+        description: "Operating Reactor Analytics is a complete rebuild of the current Nuclear Regulatory Commission's (NRC) nuclear power plant performance indicator webpage.  Operating Reactor Analytics displays current and historical quarterly data of all operating nuclear power plants.  This application was built using React.js.",
+        status: 'active',
         thumbnail: rango_img,
-        link: null,
+        link: 'https://www.nrc.gov/reactors/operating/oversight/analytics.html',
         github: null
-    }
-]
-
-export const PROJECT_PAGE_PROOF_OF_CONCEPT_INFORMATION = [
-    {
-        name: 'battle_casualties',
-        title: 'Battlefield Casualties',
-        description: "This project looks at the highest casualty counts of battles throughout human history. The data is sourced from Wikipedia (some accuracy and locations are questionable). This project was built using d3.js, dc.js, crossfilter.js, javascript, html, css, and bootstrap. It is not optimized for mobile interaction.",
-        status: 'active',
-        thumbnail: battlefield_casualties_img,
-        link: 'projects/Battlefield_Casualties_Visualization/battlefield-casualties-viz.html',
-        github: 'https://github.com/WindJammerZ/Battlefield_Casualties_Visualization'
-    }, {
-        name: 'bug_squash',
-        title: 'Bug Squasher',
-        description: "This project is a bug/feature tracker. The data is supplied by individuals who have created an account through the interface and created reports. This project was built usingthe MERN full stack (MongoDB, Express, React, Node). It is not optimized for mobile interaction as it was developed as more of an internal application.",
-        status: 'active',
-        thumbnail: bug_squasher_img,
-        link: 'https://jk-bug-squasher-application.herokuapp.com/',
-        github: 'https://github.com/WindJammerZ/bug-squasher'
     }
 ]
