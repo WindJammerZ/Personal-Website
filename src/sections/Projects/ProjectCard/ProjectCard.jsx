@@ -65,7 +65,7 @@ const Title = styled.h3`
   text-align: center;
 `
 
-const ProjectCard = ({ modalShow, title, status, thumbnail, link, github, description }) => {
+const ProjectCard = ({ modalShow, title, status, thumbnail, link, github, description, tech }) => {
 
   const [hover, setHover] = useState(false);
 
@@ -102,7 +102,7 @@ const ProjectCard = ({ modalShow, title, status, thumbnail, link, github, descri
   return (
     <LayoutWrapper ref={ref}>
       <Layout
-        onClick={() => modalShow(true, { title, thumbnail, status, link, github, description })}
+        onClick={() => modalShow(true, { title, thumbnail, status, link, github, description, tech })}
         onMouseEnter={() => mouseHoverHandler(true)}
         onMouseLeave={() => mouseHoverHandler(false)}
         ref={projectCardRef}      

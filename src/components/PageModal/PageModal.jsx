@@ -38,6 +38,7 @@ const PageModal = ({ show, clicked, pageDetails }) => {
         link={pageDetails.link}
         github={pageDetails.github}
         thumbnail={pageDetails.thumbnail}
+        tech={pageDetails.tech}
         closeClicked={clicked}
       />
     )

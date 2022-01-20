@@ -12,7 +12,7 @@ import Background from "./components/Backgrounds/Background3d/Background"
 
 const Layout = styled.div`
   position: relative;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 `
 
@@ -21,6 +21,8 @@ const ContentLayout = styled.main`
   top: 0%;
   right: 0%;
   width: 100%;
+  height: 100%;
+  overflow-y: auto;
 
   &>section{
     margin-bottom: 1rem;

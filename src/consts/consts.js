@@ -1,5 +1,6 @@
 import { faJsSquare, faHtml5, faCss3Alt, faReact, faNodeJs } from '@fortawesome/free-brands-svg-icons'
 import rango_img from '../imgs/projects/rango.jpg'
+import soa_img from '../imgs/projects/soa.jpg'
 
 export const COLOR = {
     r: 0.2627,
@@ -83,10 +84,30 @@ export const PROJECT_PAGE_PROFESSIONAL_PROJECTS_INFORMATION = [
     {
         name: 'rango',
         title: 'Operating Reactor Analytics',
-        description: "Operating Reactor Analytics is a complete rebuild of the current Nuclear Regulatory Commission's (NRC) nuclear power plant performance indicator webpage.  Operating Reactor Analytics displays current and historical quarterly data of all operating nuclear power plants.  This application was built using React.js.",
+        description: "Operating Reactor Analytics is a complete rebuild of the current Nuclear Regulatory Commission's (NRC) nuclear power plant performance indicator webpage.  Operating Reactor Analytics displays current and historical quarterly data of all operating nuclear power plants.",
+        tech: [
+            {
+                name: 'React.js',
+                link: 'https://reactjs.org/'
+            }
+        ],
         status: 'active',
         thumbnail: rango_img,
         link: 'https://www.nrc.gov/reactors/operating/oversight/analytics.html',
         github: null
+    },{
+        name: 'soa',
+        title: 'Squirrel of Approval',
+        description: "Squirrel of Approval is a news commentary site which takes obscure news from around the world and provides a commentary on the story.",
+        tech: [
+            {
+                name: 'Gatsby.js',
+                link: 'https://www.gatsbyjs.com/'
+            }
+        ],
+        status: 'active',
+        thumbnail: soa_img,
+        link: 'https://squirrelofapproval.com',
+        github: 'https://github.com/theedge1620/squirrelofapproval'
     }
 ]

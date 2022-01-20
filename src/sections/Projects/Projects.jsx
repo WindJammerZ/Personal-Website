@@ -103,6 +103,7 @@ const Projects = ({ modalShow }) => {
               link={project.link}
               github={project.github}
               description={project.description}
+              tech={project.tech}
             />
           )}
         </ProjectSection>

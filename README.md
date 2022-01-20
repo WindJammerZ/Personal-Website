@@ -1,6 +1,6 @@
 # Personal-Website
 
-My personal website built with React.js and Vite.js
+My personal website built with Gatsby.js
 
 ### Installing
 
@@ -10,38 +10,16 @@ Clone the repo
 npm install
 ```
 
-### Development
+To start the development server there are 2 methods:
 
-To start the development server:
-
-```
-npm run dev
-```
-
-The development server should be avaible at the following:
+Gatsby-cli
 
 ```
-Network:    http://192.168.0.20:3000/
-Local:      http://localhost:3000/
+gatsby develop
 ```
 
-### Build out the project
-
-To create a build of the project:
+No Gatsby-cli
 
 ```
-npm run build
-```
-
-To run a server to test the build:
-
-```
-npm run serve
-```
-
-The build server should be available at the following:
-
-```
-Local:      http://localhost:5000/
-Network:    use `--host` to expose
+npm run develop
 ```

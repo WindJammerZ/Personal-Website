@@ -23,15 +23,15 @@
   --screen-xl: 1200px;
 }
 
-html {
+html, body{
   width: 100%;
-  color: white;
-  font-family: "Audiowide";
-  overflow-x: hidden;
+  height: 100vh;
 }
 
-body {
-  width: 100%;
+html {
+  color: white;
+  font-family: "Audiowide";
+  overflow: hidden;
 }
 
 h1 {

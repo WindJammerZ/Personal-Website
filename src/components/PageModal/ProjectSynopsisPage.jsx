@@ -4,6 +4,9 @@ import styled from "styled-components"
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCircle } from '@fortawesome/free-solid-svg-icons'
+
 import WebLinks from "../WebLinks/WebLinks"
 
 const Layout = styled.div`
@@ -11,7 +14,8 @@ const Layout = styled.div`
   text-decoration: none;
   width: 90%;
   height: 90%;
-  padding: 1rem 0.5rem;
+  max-width: 50rem;
+  padding: 1rem 0.5rem 0.2rem;
   background: rgba(0, 0, 0, 0.75);
   color: white;
   border: 0.5rem solid white;
@@ -21,7 +25,7 @@ const Layout = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  overflow:hidden;
+  overflow: hidden;
 `
 
 const BackgroundImage = styled.img`
@@ -59,28 +63,46 @@ const ImageLayer = styled.div`
   transition: 300ms all ease;
 `
 
+const TechTagSection = styled.div`
+  margin-top: auto;
+  min-width: 100%;
+  overflow-y: hidden;
+  padding: 1.0rem 0.5rem 0.25rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+`
+
+const TechTag = styled.a`
+  background: black;
+  padding: 0.1rem 0.5rem;
+  color: white;
+  border: 0.25rem solid white;
+  box-shadow: inset 0rem 0rem 0.4rem 0.1rem cyan;
+  border-radius: 0.75rem;
+  border-top-left-radius: 5%;
+  border-bottom-right-radius: 0.25rem;
+  text-decoration: none;
+`
+
+const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
+  margin-right: 0.5rem;
+`
+
 const DescriptionLayer = styled.div`
-  padding: 0.1rem 0.75rem;
+  padding: 0.2rem 0.75rem;
   height: 50%;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  gap: 0.5rem;
 `
 
 const TitleSection = styled.div`
-  margin-bottom: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`
-
-const Title = styled.h2`
-  width: 100%;
   text-align: center;
-  margin-bottom: 1rem;
   border-bottom: 0.35rem solid white;
 `
 
@@ -99,7 +121,8 @@ const IconSection = styled.div`
 `
 
 const Description = styled.p`
-  width: 100%;
+  text-align: center;
+  max-width: 60ch;
   font-family: "Arimo";
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -121,7 +144,7 @@ const CloseButton = styled.button`
     }  
 `
 
-const ProjectSynopsisPage = ({ description, link, github, thumbnail, title, status, closeClicked }) => {
+const ProjectSynopsisPage = ({ description, link, github, thumbnail, title, status, tech, closeClicked }) => {
 
   let imageStatusOverlay = null
 
@@ -149,10 +172,25 @@ const ProjectSynopsisPage = ({ description, link, github, thumbnail, title, stat
       </ImageLayer>
       <DescriptionLayer>
         <TitleSection>
-          <Title>{title}</Title>
+          <h2>{title}</h2>
         </TitleSection>
+
         <Description>{description}</Description>
+        <TechTagSection>Built with:
+          {tech.map((item, index) => {
+            return (
+              <TechTag
+                href={item.link}
+                target="_blank"
+                key={`${item.name}${index}`}
+                ><StyledFontAwesomeIcon
+                  icon={faCircle}
+                  transform="shrink-5"
+                />{item.name}</TechTag>)
+          })}
+        </TechTagSection>
       </DescriptionLayer>
+
       <IconSection>
         {iconsDisplay}
         <CloseButton onClick={() => closeClicked(false)}>
